@@ -44,7 +44,7 @@ const TeamStats = () => {
   ) {
     return (
       <div className="container fondo-est pt-3 pb-2">
-        <h2 className="text-center">
+        <h2 className="text-center text-uppercase">
          Team Stats
         </h2>
         <h3 className="text-center py-4">
@@ -54,48 +54,38 @@ const TeamStats = () => {
     );
   }
 
-    
-
-  
-
-  
   return (
     <div className="container fondo-est pt-3 pb-2">
-      <h2 className="text-center">
-        <i className="text-white">TEAM </i>{" "}
+      <h1 className="text-center text-uppercase">
+        <strong>Team Statistics</strong>
+      </h1>
+      <div className="row align-items-center">
+      <div className="col-md-3">
+        <h2 className="text-center text-uppercase"><strong> <i>TEAM TYPE</i></strong></h2>
+        <h4 className="text-center">
+        <i className="text-white margen-sup">TEAM </i>{" "}
         <strong className="text-warning text-uppercase">
           {totalStats[0][0]}
         </strong>
-      </h2>
+      </h4>
+          <h2 className="text-center text-uppercase margen"> <strong> <i>Average</i> </strong></h2>
+          <h4 className="text-center text-uppercase"><strong className="text-white "><i>Weight</i></strong> <strong>{isNaN([...teamIDS.goods, ...teamIDS.bads]) === true ? (average[1][1] / [...teamIDS.goods, ...teamIDS.bads].length).toFixed(2) + " Kg" : average[1][1]}</strong>
+          </h4>
+          <h4 className="text-center"><strong className="text-white text-uppercase"><i>Height</i></strong> <strong>{isNaN([...teamIDS.goods, ...teamIDS.bads]) === true ? (average[0][1] / [...teamIDS.goods, ...teamIDS.bads].length).toFixed(2) + " Cm" : average[0][1]}</strong>
+            </h4>  
+      </div>
+
+      <div className="col-md-9">
       {totalStats.map((stat, index) => {
         return <Stat key={index} name={stat[0]} value={stat[1]} />;
       })}
-      <div className="row my-3 justify-content-center">
-        <div className="col-md-2">
-          <h4 className="text-white">Average Weight</h4>
-        </div>
-        <div className="col-md-8">
-          <h4 className="fw-bold text-warning">
-            {isNaN([...teamIDS.goods, ...teamIDS.bads]) === true ? (average[1][1] / [...teamIDS.goods, ...teamIDS.bads].length).toFixed(2) + " Kg" : average[1][1]} 
-            
-            
-          </h4>
-        </div>
       </div>
-      <div className="row my-3 justify-content-center">
-        <div className="col-md-2">
-          <h4 className="text-white">Average Height</h4>
-        </div>
-        <div className="col-md-8">
-          <h4 className="fw-bold text-warning">
-            {isNaN([...teamIDS.goods, ...teamIDS.bads]) === true ? (average[0][1] / [...teamIDS.goods, ...teamIDS.bads].length).toFixed(2) + " Cm" : average[0][1]}
-          </h4>
-        </div>
       </div>
-      
     </div>
     
   );
+
+  
   
 };
 

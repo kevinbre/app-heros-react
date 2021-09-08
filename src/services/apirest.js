@@ -71,12 +71,12 @@ export async function loginService(email, password) {
   
         const stats = data.map((e) => {
           return [
-            ["Combat", e.combat !== "null" ? e.combat : 0],
-            ["Durability", e.durability !== "null" ? e.durability : 0],
-            ["Intelligence", e.intelligence !== "null" ? e.intelligence : 0],
-            ["Power", e.power !== "null" ? e.power : 0],
-            ["Speed", e.speed !== "null" ? e.speed : 0],
-            ["Strength", e.strength !== "null" ? e.strength : 0],
+            ["COMBAT", e.combat !== "null" ? e.combat : 0],
+            ["DURABILITY", e.durability !== "null" ? e.durability : 0],
+            ["INTELLIGENCE", e.intelligence !== "null" ? e.intelligence : 0],
+            ["POWER", e.power !== "null" ? e.power : 0],
+            ["SPEED", e.speed !== "null" ? e.speed : 0],
+            ["STRENGTH", e.strength !== "null" ? e.strength : 0],
           ];
         });
   
