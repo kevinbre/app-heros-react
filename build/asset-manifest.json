@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.edea1353.chunk.css",
+    "main.js": "/static/js/main.1a66ab73.chunk.js",
+    "main.js.map": "/static/js/main.1a66ab73.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c72e740e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c72e740e.js.map",
+    "static/css/2.7bc8d54b.chunk.css": "/static/css/2.7bc8d54b.chunk.css",
+    "static/js/2.8bf355d3.chunk.js": "/static/js/2.8bf355d3.chunk.js",
+    "static/js/2.8bf355d3.chunk.js.map": "/static/js/2.8bf355d3.chunk.js.map",
+    "static/js/3.e735185b.chunk.js": "/static/js/3.e735185b.chunk.js",
+    "static/js/3.e735185b.chunk.js.map": "/static/js/3.e735185b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.7bc8d54b.chunk.css.map": "/static/css/2.7bc8d54b.chunk.css.map",
+    "static/css/main.edea1353.chunk.css.map": "/static/css/main.edea1353.chunk.css.map",
+    "static/js/2.8bf355d3.chunk.js.LICENSE.txt": "/static/js/2.8bf355d3.chunk.js.LICENSE.txt",
+    "static/media/alerta.b26656f2.png": "/static/media/alerta.b26656f2.png",
+    "static/media/index.css": "/static/media/background-login.a76692a6.jpg",
+    "static/media/batman-noencontrado.3f7e0966.gif": "/static/media/batman-noencontrado.3f7e0966.gif",
+    "static/media/batmanLogo.8ddc4fbc.png": "/static/media/batmanLogo.8ddc4fbc.png",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/loader.1de86c1e.gif": "/static/media/loader.1de86c1e.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c72e740e.js",
+    "static/css/2.7bc8d54b.chunk.css",
+    "static/js/2.8bf355d3.chunk.js",
+    "static/css/main.edea1353.chunk.css",
+    "static/js/main.1a66ab73.chunk.js"
+  ]
+}
