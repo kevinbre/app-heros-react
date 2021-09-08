@@ -1,6 +1,6 @@
 import axios from "axios";
 const herosUrl = "https://www.superheroapi.com/api.php/10218462348685676";
-const Apiurl = "http://challenge-react.alkemy.org/";
+const Apiurl = "https://challenge-react.alkemy.org/";
 
 export async function loginService(email, password) {
     try {
