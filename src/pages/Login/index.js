@@ -3,10 +3,10 @@ import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Container, Form } from 'semantic-ui-react';
 import * as Yup from "yup";
-import { AppContext } from "../context/context";
-import { loginService } from "../services/LoginService";
-import alerta from '../img/alerta.png'
-import Logo from '../img/batmanLogo.png'
+import { AppContext } from "../../context/context";
+import { loginService } from "../../services/LoginService";
+import alerta from '../../img/alerta.png'
+import Logo from '../../img/batman-noencontrado.gif'
 import "./login.css"
 
 const Login = () => {

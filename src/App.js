@@ -2,10 +2,10 @@ import { useContext, useEffect } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { AppContext } from "./context/context";
 import LayoutComponent from "./components/layout";
-import Home from "./home";
-import Login from "./login";
-import Search from "./search/search";
-import Details from "./details/details";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Search from "./pages/Search";
+import Details from "./pages/Details";
 
 function App() {
   const { user, setUser } = useContext(AppContext);
