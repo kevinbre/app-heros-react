@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../components/Cards/card";
-import { searchService } from "../services/apirest";
+import { searchService } from "../services/SearchService";
 import Loader from "../img/loader.gif";
 import errorimg from "../img/batman-noencontrado.gif"
+
 
 const Search = () => {
   const [results, setResults] = useState();

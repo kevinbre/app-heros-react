@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { getHero } from "../services/apirest";
+import { getHero } from "../services/GetHero.js";
 import Loader from "../img/loader.gif"
 
 const Details = () => {
@@ -27,9 +27,6 @@ const Details = () => {
       </div>
     );
   }
-
-
-
 
   return (
   

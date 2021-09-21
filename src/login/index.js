@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Container, Form } from 'semantic-ui-react';
 import * as Yup from "yup";
 import { AppContext } from "../context/context";
-import { loginService } from "../services/apirest";
+import { loginService } from "../services/LoginService";
 import alerta from '../img/alerta.png'
 import Logo from '../img/batmanLogo.png'
 import "./login.css"

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CardsListHeroes, CardsListVillians } from "../components/Cards/cardList";
 import TeamStats from "../components/Stats/teamStats";
 import { AppContext } from "../context/context";
-import { getHeros } from "../services/apirest";
+import { getHeros } from "../services/GetHeros";
 import Loader from "../img/loader.gif"
 
 

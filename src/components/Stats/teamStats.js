@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../context/context";
-import { getAppearance, getPowerstats } from "../../services/apirest";
+import { getPowerStats } from "../../services/GetPowerStats"
+import { getAppearance } from "../../services/GetAppearance";
 import Stat from "./stats";
 import "../../styles.css"
 
@@ -14,7 +15,7 @@ const TeamStats = () => {
   useEffect(() => {
     async function getStatsList() {
       const array = [...teamIDS.goods, ...teamIDS.bads];
-      const response = await getPowerstats(array);
+      const response = await getPowerStats(array);
       if (response) {
         setTotalStats(response);
       }
