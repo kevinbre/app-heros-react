@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { AppContext } from "../context/context";
 import SearchComponent from "./search";
-import Logo from '../img/batmanLogo.png'
+import Logo from '../img/loader.gif'
 import { Icon } from 'semantic-ui-react';
 
 

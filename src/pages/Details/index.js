@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { getHero } from "../../services/GetHero.js";
 import Loader from "../../img/loader.gif"
+import { Helmet } from "react-helmet"
 
 const Details = () => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   const history = useHistory();
+  const title = 'Details | APPHero'
 
   useEffect(() => {
     async function getData() {
@@ -29,7 +31,11 @@ const Details = () => {
   }
 
   return (
-  
+      <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={title}/>
+      </Helmet>
       <div className="detalles">
       <img src={data.image.url} className="detalles-img" alt="superhero-alt"/>
         <div className="detalles-text">
@@ -83,7 +89,7 @@ const Details = () => {
       </div>
        
     </div>
-   
+   </>
   );
 };
 

@@ -5,14 +5,17 @@ import { Container, Form } from 'semantic-ui-react';
 import * as Yup from "yup";
 import { AppContext } from "../../context/context";
 import { loginService } from "../../services/LoginService";
+import { Helmet } from "react-helmet"
 import alerta from '../../img/alerta.png'
-import Logo from '../../img/batman-noencontrado.gif'
+import Logo from '../../img/loader.gif'
 import "./login.css"
 
 const Login = () => {
   const { setUser } = useContext(AppContext);
   const [errorMsg, setErrorMsg] = useState();
   const history = useHistory();
+  const title = 'Login | APPHero'
+  
 
 const handleLogin = async (email, password) => {
   try {
@@ -47,6 +50,11 @@ const formik = useFormik({
 })
 
 return (
+  <>
+    <Helmet>
+      <title> {title} </title>
+      <meta name="description" content={title}/>
+    </Helmet>
   <div className="align-top">  
   <Container>  
       <Form onSubmit={formik.handleSubmit}>  
@@ -73,7 +81,7 @@ return (
   </Container>
   </div>
   
-    
+    </>
   );
 }
 

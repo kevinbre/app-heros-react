@@ -4,11 +4,13 @@ import TeamStats from "../../components/Stats/teamStats";
 import { AppContext } from "../../context/context";
 import { getHeros } from "../../services/GetHeros";
 import Loader from "../../img/loader.gif"
+import { Helmet } from "react-helmet"
 
 const Home = () => {
     const [team, setTeam] = useState({});
     const [loading, setLoading] = useState(false); 
     const { teamIDS, setTeamIDS } = useContext(AppContext);
+    const title = 'Home | APPHero'
   
     useEffect(() => { 
       const heroList = window.localStorage.getItem("teamList");
@@ -44,6 +46,10 @@ const Home = () => {
 
     return (
         <>
+        <Helmet>
+        <title> {title} </title>
+        <meta name="description" content={title}/>
+        </Helmet>
           <div className="mb-5">
             <TeamStats team={teamIDS} />
           </div>

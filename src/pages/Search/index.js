@@ -4,13 +4,15 @@ import Card from "../../components/Cards/card";
 import { searchService } from "../../services/SearchService";
 import Loader from "../../img/loader.gif";
 import errorimg from "../../img/batman-noencontrado.gif"
+import { Helmet } from "react-helmet"
 
 
 const Search = () => {
   const [results, setResults] = useState();
-  const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
   const { searchString } = useParams();
+  const title = 'Search | APPHero'
 
   useEffect(() => {
     async function getSearch(searchString) {
@@ -43,7 +45,12 @@ const Search = () => {
 
 
   return (
-    <div className="row">
+    <>
+      <Helmet>
+        <title> {title} </title>
+        <meta name="description" content={title}/>
+      </Helmet>
+      <div className="row">
       {results ? (
         results.map((hero) => {
           return (
@@ -63,6 +70,7 @@ const Search = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
