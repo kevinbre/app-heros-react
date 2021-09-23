@@ -18,9 +18,9 @@ export async function getAppearance(ids) {
           ];
         });
   
-        const total = stats.reduce((prev, next) => [
-          [prev[0][0], parseInt(prev[0][1]) + parseInt(next[0][1])],
-          [prev[1][0], parseInt(prev[1][1]) + parseInt(next[1][1])],
+        const total = stats.reduce((prev, act) => [
+          [prev[0][0], parseInt(prev[0][1]) + parseInt(act[0][1])],
+          [prev[1][0], parseInt(prev[1][1]) + parseInt(act[1][1])],
         ]);
   
         return total;

@@ -8,6 +8,7 @@
   }
 
 .form-login{
+  width: 100%;
   background-color: rgba(17, 17, 17, 0.95);
   border-radius: 10px;
   display: flex;
@@ -20,21 +21,23 @@
   color: #eed45e;   
 }
 
-.inputLog {
-  width: 350px;
+.inputLog input {
+  width: 400px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   vertical-align: middle;
-  padding: 10px;    
+  padding: 10px; 
   border-radius: 1px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
   border-color: #3990f9;
 }
 
 .btn-form {
-  width: 200px;   
+  width: 200px;  
+  margin-top: 20px; 
   margin-bottom: 25px;
   font-family: Helvetica;
   font-weight: bold;

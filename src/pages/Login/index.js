@@ -1,89 +1,73 @@
 import { useFormik } from "formik";
-import { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Container, Form } from 'semantic-ui-react';
+import { Container, Form } from "semantic-ui-react";
+import LoginCheck from "../../hooks/loginCheck";
 import * as Yup from "yup";
-import { AppContext } from "../../context/context";
-import { loginService } from "../../services/LoginService";
-import { Helmet } from "react-helmet"
-import alerta from '../../img/alerta.png'
-import Logo from '../../img/loader.gif'
-import "./login.css"
+import { Helmet } from "react-helmet";
+import dictionary from "../../i18n/index";
+import Logo from "../../img/loader.gif";
+import "./login.css";
 
-const Login = () => {
-  const { setUser } = useContext(AppContext);
-  const [errorMsg, setErrorMsg] = useState();
-  const history = useHistory();
-  const title = 'Login | APPHero'
-  
 
-const handleLogin = async (email, password) => {
-  try {
-    const response = await loginService(email, password);
-      if (response) {
-        window.localStorage.setItem(
-            "userToken",
-            JSON.stringify(response.data.token)
-          );          
-          history.push("/");
-          setUser(response.data.token);         
-      }
-  } catch (error) {
-      if (error) {
-        setErrorMsg('User or password missing');        
-      }
+export default function Login() {
+  const title = "Login | APPHero";
+  const { handleLogin } = LoginCheck();
+
+  //Formik para validaciones
+  const { handleSubmit, handleChange, touched, errors, handleBlur } = useFormik(
+    {
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema: Yup.object({
+        email: Yup.string().email("Invalid email format").required(" "),
+        password: Yup.string()
+          .min(4, "Password should be longer than 4 characters")
+          .required(" "),
+      }),
+      onSubmit: (values) => {
+        handleLogin(values.email, values.password);
+      },
     }
-};
+  );
 
-const formik = useFormik({
-  initialValues: {
-    email: "",
-    password: "",
-  },
-  validationSchema: Yup.object({
-    email: Yup.string().email("Formato de email invalido").required("Email no registrado o incorrecto"),
-    password: Yup.string().required("Contraseña incorrecta")
-  }),
-    onSubmit: (values) => {
-    handleLogin(values.email, values.password)
-    },
-})
-
-return (
-  <>
-    <Helmet>
-      <title> {title} </title>
-      <meta name="description" content={title}/>
-    </Helmet>
-  <div className="align-top">  
-  <Container>  
-      <Form onSubmit={formik.handleSubmit}>  
-        <div className="form-login">
-          <img src={Logo} width="15%" alt="logo"></img>
-          <h2> APP Heros Login </h2>
-          {errorMsg ? (
-            <div className="alerta fade-in-image fadeIn" role="alert">
-              <img src={alerta} className="img-size" alt="alert"/>{errorMsg}
-              <button
-            type="button"
-            className="btn-alert"
-            onClick={() => setErrorMsg(null)}
-          >X</button>              
-            </div> 
-            ) : (
-             " "
-            )}         
-          <Form.Input className="inputLog" name="email" type="email" onChange={formik.handleChange} error={formik.errors.email}/>
-          <Form.Input className="inputLog" name="password" type="password" onChange={formik.handleChange} error={formik.errors.password}/>
-          <button type="submit" className="btn-form">Log In</button>          
-        </div>
-      </Form>
-  </Container>
-  </div>
-  
+  return (
+    <>
+      <Helmet>
+        <title> {title} </title>
+        <meta name="description" content={title} />
+      </Helmet>
+      <div className="align-top">
+        <Container>
+          <Form onSubmit={handleSubmit}>
+            <div className="form-login">
+              <img src={Logo} width="15%" alt="logo"></img>
+              <h2> APP Heros Login </h2>
+              <input
+                style={{ width: "80%", marginTop: "10px" }}
+                name="email"
+                type="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {touched.email && errors.email ? <div>{errors.email}</div> : null}
+              <input
+                style={{ width: "80%", marginTop: "10px" }}
+                name="password"
+                type="password"
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {touched.password && errors.password ? (
+                <div>{errors.password}</div>
+              ) : null}
+              <button type="submit" className="btn-form">
+                {dictionary.LOGIN_FORM.LOGIN}
+              </button>
+            </div>
+          </Form>
+        </Container>
+      </div>
     </>
   );
 }
-
-
-export default Login;

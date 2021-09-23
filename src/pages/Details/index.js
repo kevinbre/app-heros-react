@@ -4,6 +4,7 @@ import { getHero } from "../../services/GetHero.js";
 import Loader from "../../img/loader.gif"
 import { Helmet } from "react-helmet"
 
+
 const Details = () => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);

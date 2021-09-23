@@ -1,47 +1,58 @@
 import { useContext, useEffect } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { AppContext } from "./context/context";
-import LayoutComponent from "./components/layout";
+import LayoutComponent from "./components/Layout/layout";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login from "./pages/Login/index";
 import Search from "./pages/Search";
 import Details from "./pages/Details";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import useUser from './hooks/useUser'
+
 
 function App() {
-  const { user, setUser } = useContext(AppContext);
 
-  useEffect(() => {
-    const token = window.localStorage.getItem("userToken");
-    if (token) {
-      const user = JSON.parse(token);
-      setUser(user);
-    }
-  }, [setUser]);
+  const {isLogged} = useUser()
 
   return (
     <>
+    
       <div className="">
         <BrowserRouter>
           <LayoutComponent>
             <div className="py-5">
               <Switch>
                 <Route exact path="/">
-                  {user ? <Home /> : <Redirect to="/login" />}
+                  {isLogged ? <Home /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/search/:searchString">
-                  {user ? <Search /> : <Redirect to="/login" />}
+                  {isLogged ? <Search /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/details/:id">
-                  {user ? <Details /> : <Redirect to="/login" />}
+                  {isLogged ? <Details /> : <Redirect to="/login" />}
                 </Route>
                 <Route path="/login">
-                  {!user ? <Login /> : <Redirect to="/" />}
+                  {!isLogged ? <Login /> : <Redirect to="/" />}
                 </Route>
               </Switch>
             </div>
-          </LayoutComponent>
+            <ToastContainer
+              theme="dark"
+              position="top-center"
+              autoClose={4000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            </LayoutComponent>
         </BrowserRouter>
       </div>
+   
     </>
   );
 }

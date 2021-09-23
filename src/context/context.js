@@ -1,16 +1,20 @@
 import { createContext, useState } from "react";
+import { toast } from 'react-toastify';
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [user, setUser] = useState();
+  
+  
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [teamIDS, setTeamIDS] = useState({
     goods: [],
     bads: [],
   });
-
+  
   const handleTeam = (alignment, id) => {
+  
     if (alignment === "good") {
       const array = teamIDS.goods.filter((heroId) => heroId !== id);
       if (teamIDS.goods.includes(id)) {
@@ -28,6 +32,8 @@ export const AppProvider = ({ children }) => {
         };
         setTeamIDS(heros);
         window.localStorage.setItem("teamList", JSON.stringify(heros));
+      } else if (teamIDS.goods.length >= 3 && !teamIDS.goods.includes(id)) {
+        toast.warn('Hero team is Full!')
       }
     }
     if (alignment === "bad") {
@@ -47,6 +53,8 @@ export const AppProvider = ({ children }) => {
         };
         setTeamIDS(heros);
         window.localStorage.setItem("teamList", JSON.stringify(heros));
+      } else if (teamIDS.bads.length >= 3 && !teamIDS.bads.includes(id)){
+        toast.warn('Villian team is Full!')
       }
     }
   };

@@ -1,3 +1,4 @@
+
 /* NavBar */
 .logo-nav{
   font-weight: bold;
@@ -41,6 +42,7 @@
 }
 
 .navbar-style li a:hover {
+  height:100%;
   background-color: #f7bd2a;
   color: black;
 }

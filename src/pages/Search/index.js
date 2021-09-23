@@ -6,7 +6,6 @@ import Loader from "../../img/loader.gif";
 import errorimg from "../../img/batman-noencontrado.gif"
 import { Helmet } from "react-helmet"
 
-
 const Search = () => {
   const [results, setResults] = useState();
   const [loading, setLoading] = useState(false);

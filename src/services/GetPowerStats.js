@@ -22,14 +22,16 @@ export async function getPowerStats(ids) {
         });
   
         const total = stats
-          .reduce((prev, next) => [
-            [prev[0][0], Number(prev[0][1]) + Number(next[0][1])],
-            [prev[1][0], Number(prev[1][1]) + Number(next[1][1])],
-            [prev[2][0], Number(prev[2][1]) + Number(next[2][1])],
-            [prev[3][0], Number(prev[3][1]) + Number(next[3][1])],
-            [prev[4][0], Number(prev[4][1]) + Number(next[4][1])],
-            [prev[5][0], Number(prev[5][1]) + Number(next[5][1])],
+          .reduce((prev, act) => [
+            [prev[0][0], Number(prev[0][1]) + Number(act[0][1])],
+            [prev[1][0], Number(prev[1][1]) + Number(act[1][1])],
+            [prev[2][0], Number(prev[2][1]) + Number(act[2][1])],
+            [prev[3][0], Number(prev[3][1]) + Number(act[3][1])],
+            [prev[4][0], Number(prev[4][1]) + Number(act[4][1])],
+            [prev[5][0], Number(prev[5][1]) + Number(act[5][1])],
+            
           ])
+          
           .sort((a, b) => b[1] - a[1]);
   
         return total;
