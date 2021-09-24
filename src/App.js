@@ -1,6 +1,4 @@
-import { useContext, useEffect } from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import { AppContext } from "./context/context";
+import { BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import LayoutComponent from "./components/Layout/layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login/index";
@@ -11,13 +9,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import useUser from './hooks/useUser'
 
 
-function App() {
 
-  const {isLogged} = useUser()
+function App() {
+  const { isLogged } = useUser()
 
   return (
     <>
-    
       <div className="">
         <BrowserRouter>
           <LayoutComponent>
@@ -52,7 +49,6 @@ function App() {
             </LayoutComponent>
         </BrowserRouter>
       </div>
-   
     </>
   );
 }

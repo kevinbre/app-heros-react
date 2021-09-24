@@ -20,17 +20,17 @@ code {
 }
 
 ::-webkit-scrollbar-track{
-  background: rgb(0, 0, 0);
+  background: #feda3e;
 }
 
 ::-webkit-scrollbar-thumb{
-  background: #f8b817;
+  background: rgb(8, 8, 8);;
   border-radius: 15px;
-  border: 5px rgb(0, 0, 0) solid 
+  border: 2px #feda3e solid 
 }
 
 ::-webkit-scrollbar-thumb:hover{
-  background: #f7c548;
+  background: #1b1b1bf6;
 }
 
 

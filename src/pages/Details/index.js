@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { getHero } from "../../services/GetHero.js";
 import Loader from "../../img/loader.gif"
 import { Helmet } from "react-helmet"
+import './Details.css'
 
 
 const Details = () => {
@@ -30,6 +31,8 @@ const Details = () => {
       </div>
     );
   }
+
+  
 
   return (
       <>
@@ -84,9 +87,9 @@ const Details = () => {
                     {data.work.base}
                   </a>
               </p>
-              <a className="detalles-button" href="/#" onClick={() => history.push("/")}>
+              <button className="detalles-button" onClick={() => history.goBack()}>
                   GO BACK
-              </a>
+              </button>
       </div>
        
     </div>

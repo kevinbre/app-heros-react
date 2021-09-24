@@ -1,0 +1,22 @@
+.navbar-yellow {
+  color: yellow !important;
+}
+
+.btn-search {
+  color: #f7bd2a;
+  background: none;
+  border: none;
+}
+
+.input-search {
+  margin: auto;
+}
+
+.input-style {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: none;
+  border-color: #f7bd2a;
+  border-radius: 2px;
+  color: white;
+}

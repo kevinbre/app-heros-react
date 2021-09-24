@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../context/context";
 import dictionary from "../../i18n";
-import "../../styles.css"
+import "./Card.css"
 
 const Card = ({ hero }) => {
   const { teamIDS, handleTeam } = useContext(AppContext);

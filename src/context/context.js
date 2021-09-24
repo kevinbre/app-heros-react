@@ -6,7 +6,7 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   
   
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
   const [teamIDS, setTeamIDS] = useState({
     goods: [],

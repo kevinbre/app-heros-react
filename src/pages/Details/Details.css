@@ -1,0 +1,135 @@
+/* Details */
+.detalles {
+  width: 100%;
+  max-width: 98rem;
+  padding: 5rem;
+  background-color: rgba(19, 19, 19, 0.958);
+  box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 0.8rem;
+}
+
+.detalles-img {
+  min-width: 25%;
+  max-width: 25%;
+  border-radius: 4px;
+  display: flex;
+  transform: translateX(-8rem);
+  position: relative;
+}
+
+.detalles-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8rem;
+}
+
+.detalles-img::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: linear-gradient(
+    to right,
+    rgba(79, 172, 254, 0.8),
+    rgba(0, 242, 2549 0.8)
+  );
+  box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0.05);
+  border-radius: 0.8rem;
+}
+
+.detalles-name {
+  text-transform: uppercase;
+  display: block;
+  color: white;
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+.detalles-info {
+  margin-top: 0px;
+  display: block;
+  color: #dfb86f;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  padding-bottom: 10%;
+}
+
+.detalles-text {
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.detalles-text-title {
+  color: #dfb86f;
+  text-decoration: none;
+  pointer-events: none;
+  font-weight: 700;
+}
+
+.detalles-text-info {
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  pointer-events: none;
+  font-weight: 450;
+  font-style: italic;
+}
+
+.detalles-button {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #dfb86f;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 5%;
+  border: none;
+}
+
+.detalles-button:hover {
+  background-color: #635335;
+  color: white;
+}
+
+@media screen and (max-width: 1068px) {
+  .detalles {
+    max-width: 80rem;
+  }
+  .detalles-img {
+    min-width: 15rem;
+    max-width: 15rem;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .detalles {
+    margin-top: 20%;
+    margin-bottom: 10%;
+    max-width: 35rem;
+    max-width: 35rem;
+    padding: 2.5rem;
+    flex-direction: column;
+  }
+  .detalles-text {
+    margin-top: -80px;
+  }
+  .detalles-img {
+    padding: 0;
+    min-width: 80%;
+    max-width: 80%;
+    transform: translate(0, -8rem);
+  }
+}
