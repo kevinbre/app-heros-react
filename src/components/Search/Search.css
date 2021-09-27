@@ -5,18 +5,44 @@
 .btn-search {
   color: #f7bd2a;
   background: none;
-  border: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-color: #f7bd2a;
+  
 }
 
 .input-search {
   margin: auto;
+ 
 }
 
 .input-style {
+  text-align: center;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
   margin-top: 10px;
   margin-bottom: 10px;
   background: none;
-  border-color: #f7bd2a;
-  border-radius: 2px;
+  border-color: #a37d1b;
   color: white;
+ 
 }
+
+.input-search :focus{
+    outline:none;
+}
+
+.btn-seach :focus{
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    /*sirve para que a la hora de seleccionar una opcion guardada no muestre color de fondo y el color de la letra sea parecida a la anterior  */
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #a37d1b
+  }

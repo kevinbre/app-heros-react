@@ -1,4 +1,4 @@
-/* Carta */
+/* Cards*/
 .carta-img {
   width: 236px;
   height: 328px;
@@ -10,23 +10,21 @@
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-.list-group{
+.list-group {
   border-top-left-radius: 15px !important;
-border-top-right-radius: 15px !important;
+  border-top-right-radius: 15px !important;
 }
 
-.list-group-item{
-background-color: black !important;
-color: rgb(255, 255, 255) !important;
-text-decoration: none;
-
+.list-group-item {
+  background-color: black !important;
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
 }
 
 .carta-medida {
   width: 236px;
   height: 400px;
   background-color: black;
-  
 }
 
 .Card {
@@ -48,8 +46,6 @@ text-decoration: none;
   color: #f7bd2a;
   text-align: center;
   opacity: 0.85;
-  
-  
 }
 
 .carta-caja {
@@ -58,7 +54,6 @@ text-decoration: none;
   padding-bottom: 100px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  
 }
 
 .progress-bar-yellow {
@@ -67,7 +62,7 @@ text-decoration: none;
   font-weight: bold;
 }
 
-/* Efecto Carta */
+/* Card effect */
 .carta-box {
   width: 50%;
   display: block;
@@ -96,10 +91,9 @@ text-decoration: none;
 
 .cara.detras {
   transform: rotateY(180deg);
-  
 }
 
-/* Fade In */
+/* Fade in Card */
 .fade-in-image {
   animation: fadeIn 1.5s;
   -webkit-animation: fadeIn 1.5s;

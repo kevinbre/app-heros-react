@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { AppContext } from "../../context/context";
+import { Icon } from "semantic-ui-react";
 import SearchComponent from "../Search/search";
-import Logo from '../../img/loader.gif'
-import { Icon } from 'semantic-ui-react';
-import './Navbar.css'
-
+import Logo from "../../img/loader.gif";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { setUser } = useContext(AppContext);
@@ -19,19 +18,14 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark text-center navbar-style sticky-top">
-
-    <i className="fas fa-bars text-white"></i>
+      <i className="fas fa-bars text-white"></i>
 
       <div className="container-fluid">
         <Link
           className="navbar-brand d-flex justify-content-center align-items-center"
           to="/"
         >
-          <img
-            src={Logo}
-            alt=""      
-            className="logo-style"
-          />
+          <img src={Logo} alt="" className="logo-style" />
           <span className="logo-nav ">APP Hero</span>
         </Link>
         <button
@@ -43,33 +37,41 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="icono-nav toggler"><Icon name="bars"/></span>
+          <span className="icono-nav toggler">
+            <Icon name="bars" />
+          </span>
         </button>
         <div className="navbar-collapse collapse" id="navbarSupportedContent">
           <ul className="nav navbar-nav">
             <li className="active nav-items">
-              <Link className="navbar-buttons text-center" aria-current="page" to="/">
-                <span >Home</span>
+              <Link
+                className="navbar-buttons text-center"
+                aria-current="page"
+                to="/"
+              >
+                <span>Home</span>
               </Link>
             </li>
           </ul>
-          <SearchComponent/>
+          <SearchComponent />
           <ul className="nav navbar-nav">
             <li className="nav-items">
-              <Link onClick={() => handleLogout()}
-                    className="navbar-buttons text-center"
-                    aria-current="page"
-                    to="/"
+              <Link
+                onClick={() => handleLogout()}
+                className="navbar-buttons text-center"
+                aria-current="page"
+                to="/"
               >
-              <span className="text-uppercase fs-6 text-center">Log Out <Icon name="log out"/></span>
-            </Link>
+                <span className="text-uppercase fs-6 text-center">
+                  Log Out <Icon name="log out" />
+                </span>
+              </Link>
             </li>
           </ul>
-          
         </div>
       </div>
     </nav>
-  )
+  );
 };
 
 export default Navbar;
